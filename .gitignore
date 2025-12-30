@@ -50,6 +50,9 @@ share/python-wheels/
 *.egg
 MANIFEST
 
+data/
+nvdiffrast/build/
+nvdiffrast/nvdiffrast.egg-info/
 # PyInstaller
 #  Usually these files are written by a python script from a template
 #  before PyInstaller builds the exe, so as to inject date/other infos into it.

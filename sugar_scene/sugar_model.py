@@ -555,7 +555,7 @@ class SuGaR(nn.Module):
     def texture_features(self):
         if not self._texture_initialized:
             self.update_texture_features()
-        return self.sh_coordinates[self.point_idx_per_pixel]
+        return self.sh_coordinates[self.point_idx_per_pixel.long()]
     
     @property
     def mesh(self):        
@@ -802,7 +802,7 @@ class SuGaR(nn.Module):
         
         # Compute directions
         directions = torch.nn.functional.normalize(
-            self.points[self.point_idx_per_pixel].reshape(-1, 3) - cameras.get_camera_center().view(1, 3), 
+            self.points[self.point_idx_per_pixel.long()].reshape(-1, 3) - cameras.get_camera_center().view(1, 3),
             dim=-1)
         
         # Gather sh coordinates

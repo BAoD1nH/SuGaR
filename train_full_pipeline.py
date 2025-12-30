@@ -123,7 +123,7 @@ if __name__ == "__main__":
                 -s {args.scene_path} \
                 -m {gs_checkpoint_dir} \
                 {white_background_str}\
-                --iterations 7_000"
+                --iterations 2_000"
         )
     else:
         print("A vanilla 3DGS checkpoint was provided. Skipping the vanilla 3DGS optimization.")
@@ -136,7 +136,7 @@ if __name__ == "__main__":
         f"python train.py \
             -s {args.scene_path} \
             -c {gs_checkpoint_dir} \
-            -i 7_000 \
+            -i 2_000 \
             -r {args.regularization_type} \
             -l {args.surface_level} \
             -v {args.n_vertices_in_mesh} \
